@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>My first Movie page</title>
+  </head>
+  <body>
+    There is <%= @movies.size %> movie(s) here
+    
+    <ul>
+      <% @movies.each do |movie| %>
+        <li><%= movie.title %></li>
+      <% end %>
+    </ul>
+    
+  </body>
+</html>

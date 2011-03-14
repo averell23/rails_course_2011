@@ -1,0 +1,122 @@
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-14 15:05:16) [GET]
+
+ActionController::RoutingError (No route matches "/movies/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (17.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMovies (20110314140718)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "director" varchar(255), "release_date" date, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110314140718')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("movies")[0m
+  [4;36;1mMovie Create (0.5ms)[0m   [0;1mINSERT INTO "movies" ("created_at", "title", "director", "updated_at", "release_date") VALUES('2011-03-14 14:19:24', 'Supercool first movie', 'I myself', '2011-03-14 14:19:24', '2011-03-14')[0m
+  [4;35;1mMovie Load (0.8ms)[0m   [0mSELECT * FROM "movies" [0m
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."director" = 'I myself') [0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-14 15:30:54) [GET]
+
+NameError (uninitialized constant MoviesController):
+  
+
+Rendered rescues/_trace (35.4ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:34:19) [GET]
+
+ActionView::MissingTemplate (Missing template movies/index.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:36:13) [GET]
+Rendering movies/index
+Completed in 37ms (View: 35, DB: 0) | 200 OK [http://localhost/movies/]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:41:29) [GET]
+  [4;36;1mMovie Load (0.7ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering movies/index
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #1 of app/views/movies/index.html.erb:
+1: There is <%= @movie.size %> movie(s) here
+
+    app/views/movies/index.html.erb:1
+
+Rendered rescues/_trace (45.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:41:39) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering movies/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/movies/]
+  [4;36;1mMovie Create (0.5ms)[0m   [0;1mINSERT INTO "movies" ("created_at", "title", "director", "updated_at", "release_date") VALUES('2011-03-14 14:45:18', 'Cool Movie 2', 'Other guy', '2011-03-14 14:45:18', NULL)[0m
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:45:21) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering movies/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/movies/]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:46:33) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering movies/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/movies/]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:48:21) [GET]
+  [4;36;1mMovie Load (0.5ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering movies/index
+
+ActionView::TemplateError (undefined method `tile' for #<Movie:0x1034a3db0>) on line #10 of app/views/movies/index.html.erb:
+7:     
+8:     <ul>
+9:       <% @movies.each do |movie| %>
+10:         <li><%= movie.tile %></li>
+11:       <% end %>
+12:     </ul>
+13:     
+
+    app/views/movies/index.html.erb:10
+    app/views/movies/index.html.erb:9:in `each'
+    app/views/movies/index.html.erb:9
+
+Rendered rescues/_trace (115.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:48:32) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering movies/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/movies/]
