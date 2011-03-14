@@ -120,3 +120,194 @@ Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:48:32) [GET]
   [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
 Rendering movies/index
 Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/movies/]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:51:55) [GET]
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering movies/index
+
+ActionView::TemplateError (undefined local variable or method `new_movies_path' for #<ActionView::Base:0x1035b8a70>) on line #14 of app/views/movies/index.html.erb:
+11:       <% end %>
+12:     </ul>
+13:     
+14:     <%= link_to "New movie", new_movies_path %>
+15:     
+16:   </body>
+17: </html>
+
+    app/views/movies/index.html.erb:14
+
+Rendered rescues/_trace (116.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 15:52:04) [GET]
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering movies/index
+Completed in 18ms (View: 14, DB: 0) | 200 OK [http://localhost/movies/]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:54:07) [GET]
+
+ActionController::UnknownAction (No action responded to new. Actions: index):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:54:50) [GET]
+
+ActionView::MissingTemplate (Missing template movies/new.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:55:09) [GET]
+Rendering movies/new
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:55:37) [GET]
+Rendering movies/new
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:57:06) [GET]
+Rendering movies/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:57:40) [GET]
+Rendering movies/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:58:29) [GET]
+Rendering movies/new
+
+ActionView::TemplateError (undefined method `label_for' for #<ActionView::Helpers::FormBuilder:0x1037d56f0>) on line #8 of app/views/movies/new.html.erb:
+5:   <body>
+6:     
+7:     <% form_for @movie do |f| %>
+8:       <%= f.label_for :director %>
+9:       <%= f.text_field :director %>
+10:       <br/>
+11:       <%= f.label_for :title %>
+
+    app/views/movies/new.html.erb:8
+    app/views/movies/new.html.erb:7
+
+Rendered rescues/_trace (47.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:58:38) [GET]
+Rendering movies/new
+
+ActionView::TemplateError (undefined method `label_for' for #<ActionView::Helpers::FormBuilder:0x1034dd498>) on line #11 of app/views/movies/new.html.erb:
+8:       <%= f.label :director %>
+9:       <%= f.text_field :director %>
+10:       <br/>
+11:       <%= f.label_for :title %>
+12:       <br/>
+13:       <%= f.submit %>
+14:     <% end %>
+
+    app/views/movies/new.html.erb:11
+    app/views/movies/new.html.erb:7
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:58:46) [GET]
+Rendering movies/new
+Completed in 12ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-14 15:59:01) [GET]
+Rendering movies/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2011-03-14 16:00:11) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"C/q8iml8paQ1sijq9AOQ0D2ayjIl6UT7UP3Gzl8/pDA=", "movie"=>{"title"=>"Blubb", "director"=>"Bla"}}
+
+ActionController::UnknownAction (No action responded to create. Actions: index and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2011-03-14 16:00:35) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"C/q8iml8paQ1sijq9AOQ0D2ayjIl6UT7UP3Gzl8/pDA=", "movie"=>{"title"=>"Blubb", "director"=>"Bla"}}
+
+ActionController::UnknownAction (No action responded to create. Actions: index and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2011-03-14 16:02:38) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"C/q8iml8paQ1sijq9AOQ0D2ayjIl6UT7UP3Gzl8/pDA=", "movie"=>{"title"=>"Blubb", "director"=>"Bla"}}
+
+RuntimeError (nil):
+  app/controllers/movies_controller.rb:14:in `create'
+
+Rendered rescues/_trace (109.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2011-03-14 16:02:58) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"C/q8iml8paQ1sijq9AOQ0D2ayjIl6UT7UP3Gzl8/pDA=", "movie"=>{"title"=>"Blubb", "director"=>"Bla"}}
+
+RuntimeError ({"title"=>"Blubb", "director"=>"Bla"}):
+  app/controllers/movies_controller.rb:14:in `create'
+
+Rendered rescues/_trace (48.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2011-03-14 16:05:03) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"C/q8iml8paQ1sijq9AOQ0D2ayjIl6UT7UP3Gzl8/pDA=", "movie"=>{"title"=>"Blubb", "director"=>"Bla"}}
+  [4;36;1mMovie Create (0.9ms)[0m   [0;1mINSERT INTO "movies" ("created_at", "title", "director", "updated_at", "release_date") VALUES('2011-03-14 15:05:03', 'Blubb', 'Bla', '2011-03-14 15:05:03', NULL)[0m
+
+ActionView::MissingTemplate (Missing template movies/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 16:05:12) [GET]
+  [4;35;1mMovie Load (0.8ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering movies/index
+Completed in 11ms (View: 2, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2011-03-14 16:05:19) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"C/q8iml8paQ1sijq9AOQ0D2ayjIl6UT7UP3Gzl8/pDA=", "movie"=>{"title"=>"Blubb", "director"=>"Bla"}}
+  [4;36;1mMovie Create (0.3ms)[0m   [0;1mINSERT INTO "movies" ("created_at", "title", "director", "updated_at", "release_date") VALUES('2011-03-14 15:05:19', 'Blubb', 'Bla', '2011-03-14 15:05:19', NULL)[0m
+
+ActionView::MissingTemplate (Missing template movies/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2011-03-14 16:06:52) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"C/q8iml8paQ1sijq9AOQ0D2ayjIl6UT7UP3Gzl8/pDA=", "movie"=>{"title"=>"This is my movie for redirect", "director"=>"Cool Movie, created from web"}}
+  [4;35;1mMovie Create (591.9ms)[0m   [0mINSERT INTO "movies" ("created_at", "title", "director", "updated_at", "release_date") VALUES('2011-03-14 15:06:52', 'This is my movie for redirect', 'Cool Movie, created from web', '2011-03-14 15:06:52', NULL)[0m
+Redirected to http://localhost:3000/movies
+Completed in 1094ms (DB: 592) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-14 16:06:53) [GET]
+  [4;36;1mMovie Load (0.5ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering movies/index
+Completed in 7ms (View: 2, DB: 1) | 200 OK [http://localhost/movies]
