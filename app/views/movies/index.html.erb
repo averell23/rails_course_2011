@@ -1,17 +1,13 @@
-<html>
-  <head>
-    <title>My first Movie page</title>
-  </head>
-  <body>
-    There is <%= @movies.size %> movie(s) here
-    
-    <ul>
-      <% @movies.each do |movie| %>
-        <li><%= movie.title %></li>
-      <% end %>
-    </ul>
-    
-    <%= link_to "New movie", new_movie_path %>
-    
-  </body>
-</html>
+There is <%= @movies.size %> movie(s) here
+
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
+
+<ul>
+  <% @movies.each do |movie| %>
+    <li><%= link_to movie.title, movie_path(movie) %> [<%= link_to 'x', movie_path(movie), :method => 'delete' %>]</li>
+  <% end %>
+</ul>
+
+<%= link_to "New movie", new_movie_path %>

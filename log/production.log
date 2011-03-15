@@ -1,0 +1,45 @@
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 09:18:58) [GET]
+  Parameters: {"id"=>"123"}
+
+ActiveRecord::StatementInvalid (Could not find table 'movies'):
+  app/controllers/movies_controller.rb:22:in `show'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 09:19:00) [GET]
+  Parameters: {"id"=>"123"}
+
+ActiveRecord::StatementInvalid (Could not find table 'movies'):
+  app/controllers/movies_controller.rb:22:in `show'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 09:19:00) [GET]
+  Parameters: {"id"=>"123"}
+
+ActiveRecord::StatementInvalid (Could not find table 'movies'):
+  app/controllers/movies_controller.rb:22:in `show'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 09:19:04) [GET]
+  Parameters: {"id"=>"123"}
+
+ActiveRecord::StatementInvalid (Could not find table 'movies'):
+  app/controllers/movies_controller.rb:22:in `show'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 09:20:09) [GET]
+  Parameters: {"id"=>"123"}
+
+ActiveRecord::RecordNotFound (Couldn't find Movie with ID=123):
+  app/controllers/movies_controller.rb:22:in `show'
+
+Rendering rescues/layout (not_found)
