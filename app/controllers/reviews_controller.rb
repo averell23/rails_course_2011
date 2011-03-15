@@ -1,9 +1,33 @@
 class ReviewsController < ApplicationController
   
+  before_filter :find_movie
+  
   # GET movies/:id/reviews
   def index
-    @movie = Movie.find(params[:movie_id])
     @reviews = @movie.reviews
+  end
+  
+  def new
+    @review = Review.new
+  end
+  
+  def create
+    @review = @movie.reviews.create(params[:review])
+    if(@review.save)
+      redirect_to movie_reviews_url(@movie)
+    else
+      render :action => 'new'
+    end
+  end
+  
+  def show
+    @review = Review.find(params[:id])
+  end
+  
+  protected
+  
+  def find_movie
+    @movie = Movie.find(params[:movie_id])
   end
   
 end

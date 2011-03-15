@@ -1,3 +1,13 @@
+<p><%= link_to 'back', movie_path(@movie) %>
+
 <h2>Reviews for <%= @movie.title %></h2>
 
+<p><%= link_to 'write a review', new_movie_review_path(@movie) %></p>
+
 There are <%= @reviews.size %> reviews
+
+<ul>
+  <% for review in @reviews %>
+    <li><%= link_to "Review by #{review.author}", movie_review_path(@movie, review) %></li>
+  <% end %>
+</ul>

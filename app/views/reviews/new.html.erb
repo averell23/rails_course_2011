@@ -1,0 +1,11 @@
+<% form_for @review, :url => movie_reviews_path(@movie) do |f| %>
+  <%= f.label :author %>
+  <br/>
+  <%= @review.errors.on(:author) %> <%= f.text_field :author %>
+  <br/>
+  <%= f.label :title %>
+  <br/>
+  <%= @review.errors.on(:text) %><%= f.text_area :text %> 
+  <br/>
+  <%= f.submit %>
+<% end %>

@@ -1258,3 +1258,421 @@ Rendering template within layouts/application
 Rendering reviews/index
   [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
 Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 11:30:05) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/14]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 11:30:06) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/14]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:30:08) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2011-03-15 11:30:09) [GET]
+  Parameters: {"movie_id"=>"14"}
+
+NameError (undefined local variable or method `prams' for #<ReviewsController:0x103496bb0>):
+  app/controllers/reviews_controller.rb:10:in `new'
+
+Rendered rescues/_trace (100.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2011-03-15 11:30:31) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+
+ActionView::TemplateError (undefined method `reviews_path' for #<ActionView::Base:0x1036850c0>) on line #1 of app/views/reviews/new.html.erb:
+1: <% form_for @review do |f| %>
+2:   <%= f.label :author %>
+3:   <br/>
+4:   <%= @movie.errors.on(:author) %> <%= f.text_field :author %>
+
+    app/views/reviews/new.html.erb:1
+
+Rendered rescues/_trace (51.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2011-03-15 11:31:32) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/movies/14/reviews/new]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:31:45) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"14", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"The Man", "text"=>"This stinks"}}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+  [4;35;1mReview Create (0.5ms)[0m   [0mINSERT INTO "reviews" ("created_at", "author", "movie_id", "updated_at", "text") VALUES('2011-03-15 10:31:45', 'The Man', 14, '2011-03-15 10:31:45', 'This stinks')[0m
+Redirected to http://localhost:3000/movies/14/reviews
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:31:45) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2011-03-15 11:32:20) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/movies/14/reviews/new]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:32:21) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"14", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"", "text"=>""}}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/reviews/new.html.erb:
+1: <% form_for @review, :url => movie_reviews_path(@movie) do |f| %>
+2:   <%= f.label :author %>
+3:   <br/>
+4:   <%= @movie.errors.on(:author) %> <%= f.text_field :author %>
+
+    app/views/reviews/new.html.erb:1
+    app/controllers/reviews_controller.rb:20:in `create'
+
+Rendered rescues/_trace (117.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:32:40) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"14", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"", "text"=>""}}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/reviews/new.html.erb:
+1: <% form_for @review, :url => movie_reviews_path(@movie) do |f| %>
+2:   <%= f.label :author %>
+3:   <br/>
+4:   <%= @movie.errors.on(:author) %> <%= f.text_field :author %>
+
+    app/views/reviews/new.html.erb:1
+    app/controllers/reviews_controller.rb:20:in `create'
+
+Rendered rescues/_trace (49.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2011-03-15 11:33:28) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+Completed in 78ms (View: 71, DB: 0) | 200 OK [http://localhost/movies/14/reviews/new]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:33:30) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"14", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"", "text"=>""}}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #1 of app/views/reviews/new.html.erb:
+1: <% form_for @review, :url => movie_reviews_path(@movie) do |f| %>
+2:   <%= f.label :author %>
+3:   <br/>
+4:   <%= @movie.errors.on(:author) %> <%= f.text_field :author %>
+
+    app/views/reviews/new.html.erb:1
+    app/controllers/reviews_controller.rb:20:in `create'
+
+Rendered rescues/_trace (50.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:34:15) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"14", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"", "text"=>""}}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+Completed in 25ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:34:26) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"14", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"", "text"=>""}}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+Completed in 92ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:34:50) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"14", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"", "text"=>""}}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+Completed in 34ms (View: 11, DB: 0) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:35:06) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"14", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"The Woman", "text"=>"It rocks"}}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+  [4;35;1mReview Create (0.4ms)[0m   [0mINSERT INTO "reviews" ("created_at", "author", "movie_id", "updated_at", "text") VALUES('2011-03-15 10:35:06', 'The Woman', 14, '2011-03-15 10:35:06', 'It rocks')[0m
+Redirected to http://localhost:3000/movies/14/reviews
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:35:06) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:36:47) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+  [4;36;1mReview Load (0.3ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+
+ActionView::TemplateError (undefined local variable or method `reviews' for #<ActionView::Base:0x103560190>) on line #8 of app/views/reviews/index.html.erb:
+5: There are <%= @reviews.size %> reviews
+6: 
+7: <ul>
+8:   <% for review in reviews %>
+9:     <li><%= link_to "Review by #{review.author}", movie_review_path(@movie, review) %></li>
+10:   <% end %>
+11: </ul>
+
+    app/views/reviews/index.html.erb:8
+
+Rendered rescues/_trace (111.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:37:00) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+  [4;35;1mReview Load (0.2ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 17ms (View: 9, DB: 1) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2011-03-15 11:37:03) [GET]
+  Parameters: {"movie_id"=>"14", "id"=>"3"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create, index, and new):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:38:28) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+  [4;36;1mReview Load (0.2ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2011-03-15 11:38:30) [GET]
+  Parameters: {"movie_id"=>"14", "id"=>"3"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+  [4;36;1mReview Load (0.2ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews"."id" = 3) [0m
+Rendering template within layouts/application
+Rendering reviews/show
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/movies/14/reviews/3]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:39:41) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+  [4;35;1mReview Load (0.2ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 83ms (View: 9, DB: 1) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 11:39:42) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/14]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:39:44) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+  [4;35;1mReview Load (0.2ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2011-03-15 11:39:46) [GET]
+  Parameters: {"movie_id"=>"14", "id"=>"2"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+  [4;35;1mReview Load (0.2ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering reviews/show
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/movies/14/reviews/2]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:39:47) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+  [4;36;1mReview Load (0.2ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 11:40:30) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 8ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/14]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-15 11:40:31) [GET]
+  [4;36;1mMovie Load (0.7ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 25ms (View: 20, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 11:40:33) [GET]
+  Parameters: {"id"=>"10"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://localhost/movies/10]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:40:35) [GET]
+  Parameters: {"movie_id"=>"10"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 10) [0m
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/movies/10/reviews]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2011-03-15 11:40:38) [GET]
+  Parameters: {"movie_id"=>"10"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/movies/10/reviews/new]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:44:05) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"10", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"I am", "text"=>"This is a movie"}}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+  [4;36;1mReview Create (0.4ms)[0m   [0;1mINSERT INTO "reviews" ("created_at", "author", "movie_id", "updated_at", "text") VALUES('2011-03-15 10:44:05', 'I am', 10, '2011-03-15 10:44:05', 'This is a movie')[0m
+Redirected to http://localhost:3000/movies/10/reviews
+Completed in 15ms (DB: 1) | 302 Found [http://localhost/movies/10/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:44:05) [GET]
+  Parameters: {"movie_id"=>"10"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 10) [0m
+  [4;35;1mReview Load (0.2ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 10) [0m
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/movies/10/reviews]
+
+
+Processing ReviewsController#show (for 127.0.0.1 at 2011-03-15 11:44:09) [GET]
+  Parameters: {"movie_id"=>"10", "id"=>"4"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+  [4;35;1mReview Load (0.2ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews"."id" = 4) [0m
+Rendering template within layouts/application
+Rendering reviews/show
+Completed in 10ms (View: 2, DB: 0) | 200 OK [http://localhost/movies/10/reviews/4]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2011-03-15 11:44:12) [GET]
+  Parameters: {"movie_id"=>"10"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/movies/10/reviews/new]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:47:27) [GET]
+  Parameters: {"movie_id"=>"10"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 10) [0m
+  [4;35;1mReview Load (0.2ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 10) [0m
+Completed in 74ms (View: 5, DB: 1) | 200 OK [http://localhost/movies/10/reviews]
+
+
+Processing ReviewsController#new (for 127.0.0.1 at 2011-03-15 11:47:28) [GET]
+  Parameters: {"movie_id"=>"10"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering reviews/new
+Completed in 13ms (View: 5, DB: 0) | 200 OK [http://localhost/movies/10/reviews/new]
+
+
+Processing ReviewsController#create (for 127.0.0.1 at 2011-03-15 11:47:39) [POST]
+  Parameters: {"commit"=>"Save changes", "movie_id"=>"10", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "review"=>{"author"=>"Beginning with filter", "text"=>"Test Test\r\n"}}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+  [4;36;1mReview Create (0.4ms)[0m   [0;1mINSERT INTO "reviews" ("created_at", "author", "movie_id", "updated_at", "text") VALUES('2011-03-15 10:47:39', 'Beginning with filter', 10, '2011-03-15 10:47:39', 'Test Test
+')[0m
+Redirected to http://localhost:3000/movies/10/reviews
+Completed in 14ms (DB: 1) | 302 Found [http://localhost/movies/10/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:47:39) [GET]
+  Parameters: {"movie_id"=>"10"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 10) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 10) [0m
+  [4;35;1mReview Load (0.2ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 10) [0m
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://localhost/movies/10/reviews]
