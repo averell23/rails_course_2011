@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   protected
   
   def require_login
-    redirect_to new_session_url unless(session[:logged_in] == true)
+    redirect_to new_session_url(:redirect_to => self.request.request_uri) unless(session[:logged_in] == true)
   end
   
 end

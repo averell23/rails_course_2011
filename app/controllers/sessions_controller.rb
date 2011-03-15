@@ -7,8 +7,9 @@ class SessionsController < ApplicationController
     @user = User.find_by_username(params[:username])
     if(@user && @user.password == params[:password])
       session[:logged_in] = true
+      session[:current_user_name] = @user.username
       flash[:notice] = "User logged in"
-      redirect_to movies_url
+      redirect_to params[:redirect_to] || movies_url
     else
       flash[:notice] = "Wrong username and password"
       render :action => 'new'

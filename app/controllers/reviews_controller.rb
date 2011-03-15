@@ -9,7 +9,7 @@ class ReviewsController < ApplicationController
   end
   
   def new
-    @review = Review.new
+    @review = Review.new(:author => session[:current_user_name])
   end
   
   def create

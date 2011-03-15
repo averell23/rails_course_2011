@@ -1,8 +1,6 @@
 There is <%= @movies.size %> movie(s) here
 
-<% if flash[:notice] %>
-<p><%= flash[:notice] %></p>
-<% end %>
+<%= render_flash %>
 
 <% if logged_in? %>
   <%= link_to 'Logout',{  :controller => 'sessions', :action => 'destroy', :id => 'current' }, :method => 'delete' %>
@@ -10,7 +8,7 @@ There is <%= @movies.size %> movie(s) here
 
 <ul>
   <% @movies.each do |movie| %>
-    <li><%= link_to movie.title, movie_path(movie) %> [<%= link_to 'x', movie_path(movie), :method => 'delete' %>]</li>
+    <li><%= link_to movie.title, movie_path(movie) %> [<%= link_to 'x', movie_path(movie), :method => 'delete', :confirm => "Sure?" %>]</li>
   <% end %>
 </ul>
 

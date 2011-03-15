@@ -1,8 +1,6 @@
-<% if flash[:notice] %>
-<p><%= flash[:notice] %></p>
-<% end %>
-  
-<% form_tag :controller => 'sessions', :action => 'create' do %>
+<%= render_flash %>
+
+<% form_tag :controller => 'sessions', :action => 'create', :redirect_to => params[:redirect_to] do %>
   <label for="username">Username</label>
   <br/>
   <%= text_field_tag :username %>

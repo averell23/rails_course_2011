@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   
+  before_filter :set_page_title 
+  
   def new
     @user = User.new
   end
@@ -11,5 +13,11 @@ class UsersController < ApplicationController
     else
       render :action => 'new'
     end
+  end
+  
+  protected
+  
+  def set_page_title
+    @page_title = "User management"
   end
 end
