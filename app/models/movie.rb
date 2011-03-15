@@ -4,4 +4,6 @@ class Movie < ActiveRecord::Base
   validates_uniqueness_of :title
   validates_presence_of :director
   
+  has_many :reviews
+  
 end

@@ -1064,3 +1064,197 @@ Processing MoviesController#index (for 127.0.0.1 at 2011-03-15 10:22:50) [GET]
 Rendering template within layouts/application
 Rendering movies/index
 Completed in 87ms (View: 82, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-15 10:25:17) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+
+ActionView::TemplateError (undefined method `label_for' for #<ActionView::Base:0x103643288>) on line #10 of app/views/movies/new.html.erb:
+7:   <br/>
+8:   <%= @movie.errors.on(:title) %><%= f.text_field :title %> 
+9:   <br/>
+10:   <%= label_for :lead_actor %>
+11:   <br/>
+12:   <%= @movie.errors.on(:lead_actor) %><%= f.text_field :lead_actor %> 
+13:   <br/>
+
+    app/views/movies/new.html.erb:10
+    app/views/movies/new.html.erb:1
+
+Rendered rescues/_trace (113.1ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-15 10:25:33) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 14ms (View: 9, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#new (for 127.0.0.1 at 2011-03-15 10:28:03) [GET]
+Rendering template within layouts/application
+Rendering movies/new
+Completed in 132ms (View: 128, DB: 0) | 200 OK [http://localhost/movies/new]
+
+
+Processing MoviesController#create (for 127.0.0.1 at 2011-03-15 10:28:44) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"wPNTXW7Ra3FZBYQRZcHmYUGPGyu5PYvI2ooctJDHZzo=", "movie"=>{"title"=>"Rails 4.0.5", "director"=>"The Rails Master", "release_date(1i)"=>"2014", "release_date(2i)"=>"3", "release_date(3i)"=>"15", "lead_actor"=>""}}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT "movies".id FROM "movies" WHERE ("movies"."title" = 'Rails 4.0.5') LIMIT 1[0m
+  [4;35;1mMovie Create (0.4ms)[0m   [0mINSERT INTO "movies" ("created_at", "title", "director", "updated_at", "release_date", "lead_actor") VALUES('2011-03-15 09:28:44', 'Rails 4.0.5', 'The Rails Master', '2011-03-15 09:28:44', '2014-03-15', '')[0m
+Redirected to http://localhost:3000/movies
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/movies]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-15 10:28:44) [GET]
+  [4;36;1mMovie Load (0.7ms)[0m   [0;1mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 29ms (View: 24, DB: 1) | 200 OK [http://localhost/movies]
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM "movies" ORDER BY movies.id DESC LIMIT 1[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMovies (20110314140718)
+Migrating to AddLeadActorToMovies (20110314154128)
+Migrating to CreateReviews (20110315100054)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCREATE TABLE "reviews" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "text" varchar(255), "movie_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110315100054')[0m
+  [4;35;1mSQL (1.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("movies")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("reviews")[0m
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" ORDER BY movies.id DESC LIMIT 1[0m
+  [4;35;1mReview Load (0.2ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+  [4;36;1mReview Create (0.6ms)[0m   [0;1mINSERT INTO "reviews" ("created_at", "author", "movie_id", "updated_at", "text") VALUES('2011-03-15 10:06:55', NULL, NULL, '2011-03-15 10:06:55', 'Great movie')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" ORDER BY movies.id DESC LIMIT 1[0m
+  [4;35;1mReview Update (0.6ms)[0m   [0mUPDATE "reviews" SET "updated_at" = '2011-03-15 10:07:34', "movie_id" = 14 WHERE "id" = 1[0m
+  [4;36;1mReview Load (0.2ms)[0m   [0;1mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT "movies".id FROM "movies" WHERE ("movies"."title" = 'Rails 4.0.5' AND "movies".id <> 14) LIMIT 1[0m
+  [4;36;1mMovie Load (0.3ms)[0m   [0;1mSELECT * FROM "movies" ORDER BY movies.id DESC LIMIT 1[0m
+  [4;35;1mReview Load (0.8ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+  [4;36;1mMovie Load (0.4ms)[0m   [0;1mSELECT * FROM "movies" ORDER BY movies.id DESC LIMIT 1[0m
+  [4;35;1mReview Load (0.3ms)[0m   [0mSELECT * FROM "reviews" WHERE ("reviews".movie_id = 14) LIMIT 1[0m
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 11:11:34) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/movies/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-03-15 11:11:41) [GET]
+  Parameters: {"movie_id"=>"2"}
+
+NameError (uninitialized constant ReviewsController):
+  
+
+Rendered rescues/_trace (36.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:17:36) [GET]
+  Parameters: {"movie_id"=>"2"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+
+NoMethodError (undefined method `reviews' for nil:NilClass):
+  app/controllers/reviews_controller.rb:6:in `index'
+
+Rendered rescues/_trace (40.7ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:17:57) [GET]
+  Parameters: {"movie_id"=>"2"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 2) [0m
+Completed in 103ms (View: 12, DB: 0) | 200 OK [http://localhost/movies/2/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:18:35) [GET]
+  Parameters: {"movie_id"=>"2"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 2) [0m
+Completed in 14ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/2/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:18:52) [GET]
+  Parameters: {"movie_id"=>"2"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 2) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 2) [0m
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/movies/2/reviews]
+
+
+Processing MoviesController#index (for 127.0.0.1 at 2011-03-15 11:18:56) [GET]
+  [4;35;1mMovie Load (0.7ms)[0m   [0mSELECT * FROM "movies" [0m
+Rendering template within layouts/application
+Rendering movies/index
+Completed in 33ms (View: 28, DB: 1) | 200 OK [http://localhost/movies]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 11:18:57) [GET]
+  Parameters: {"id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/14]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:19:06) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 14ms (View: 3, DB: 0) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing MoviesController#show (for 127.0.0.1 at 2011-03-15 11:21:13) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mMovie Load (0.2ms)[0m   [0mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering movies/show
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/movies/14]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:21:14) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/movies/14/reviews]
+
+
+Processing ReviewsController#index (for 127.0.0.1 at 2011-03-15 11:22:06) [GET]
+  Parameters: {"movie_id"=>"14"}
+  [4;36;1mMovie Load (0.2ms)[0m   [0;1mSELECT * FROM "movies" WHERE ("movies"."id" = 14) [0m
+Rendering template within layouts/application
+Rendering reviews/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "reviews" WHERE ("reviews".movie_id = 14) [0m
+Completed in 10ms (View: 3, DB: 0) | 200 OK [http://localhost/movies/14/reviews]

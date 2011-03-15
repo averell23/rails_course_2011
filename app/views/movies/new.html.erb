@@ -7,9 +7,13 @@
   <br/>
   <%= @movie.errors.on(:title) %><%= f.text_field :title %> 
   <br/>
-  <%= label_for :lead_actor %>
+  <%= f.label :lead_actor %>
   <br/>
   <%= @movie.errors.on(:lead_actor) %><%= f.text_field :lead_actor %> 
+  <br/>
+  <%= f.label :release_date %>
+  <br/>
+  <%= @movie.errors.on(:release_date) %><%= f.date_select :release_date %> 
   <br/>
   <%= f.submit %>
 <% end %>
