@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
   
+  before_filter :require_login, :only => [:new, :create, :update, :edit, :destroy]
+  
   # GET /movies/
   def index
     @movies = Movie.all

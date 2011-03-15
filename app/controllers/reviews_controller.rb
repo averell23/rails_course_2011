@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   
   before_filter :find_movie
+  before_filter :require_login, :only => [:new, :create]
   
   # GET movies/:id/reviews
   def index

@@ -4,6 +4,10 @@ There is <%= @movies.size %> movie(s) here
 <p><%= flash[:notice] %></p>
 <% end %>
 
+<% if logged_in? %>
+  <%= link_to 'Logout',{  :controller => 'sessions', :action => 'destroy', :id => 'current' }, :method => 'delete' %>
+<% end %>
+
 <ul>
   <% @movies.each do |movie| %>
     <li><%= link_to movie.title, movie_path(movie) %> [<%= link_to 'x', movie_path(movie), :method => 'delete' %>]</li>

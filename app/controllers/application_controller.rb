@@ -7,4 +7,11 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  
+  protected
+  
+  def require_login
+    redirect_to new_session_url unless(session[:logged_in] == true)
+  end
+  
 end
